@@ -2,41 +2,47 @@ import { ArrowRight } from "lucide-react";
 
 const articles = [
   {
-    title: "The Architecture of Understanding",
-    category: "Featured",
+    title: "Mental Models for Learning CNNs",
+    category: "Deep Learning",
     readTime: "8 min read",
-    date: "Oct 2024",
+    date: "Jan 2025",
   },
   {
-    title: "Scaling Systems, Scaling Teams",
-    category: "System Design",
+    title: "Why Attention Changed Everything",
+    category: "Transformers",
+    readTime: "6 min read",
+    date: "Dec 2024",
+  },
+  {
+    title: "From Logistic Regression to Transformers",
+    category: "ML Fundamentals",
+    readTime: "12 min read",
+    date: "Nov 2024",
+  },
+  {
+    title: "How Netflix Decides What You Watch Next",
+    category: "Recommender Systems",
     readTime: "5 min read",
-    date: "Sep 2024",
-  },
-  {
-    title: "The Duality of the Engineer-Educator",
-    category: "Philosophy",
-    readTime: "4 min read",
-    date: "Aug 2024",
+    date: "Oct 2024",
   },
 ];
 
 export function WritingsSection() {
   return (
-    <section id="writings" className="py-24 md:py-32">
+    <section id="writings" className="py-28 md:py-36">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
         {/* Left - Header */}
         <div className="lg:col-span-4">
           <span className="font-mono text-orange-600 text-xs font-bold uppercase tracking-widest mb-4 block">
-            The Archive
+            Thinking in Public
           </span>
           <h2 className="text-5xl font-serif font-medium text-stone-900 mb-8">
-            Writings &amp; <br />
-            Thoughts.
+            Ideas Worth <br />
+            Building.
           </h2>
           <p className="text-stone-500 mb-8 leading-relaxed">
-            A collection of essays on deep learning, system architecture, and
-            the philosophy of teaching technical concepts.
+            Essays on deep learning, system architecture, and making complex
+            concepts simple. Not just techniques—they are lenses.
           </p>
           <a
             href="#"

@@ -6,7 +6,7 @@ const experiences = [
     company: "Lex AI Labs",
     role: "Founder",
     period: "Present",
-    highlight: "Building India's AI education infrastructure",
+    highlight: "AI education for India. 50+ engineers transformed.",
     isCurrent: true,
     icon: Rocket,
     iconBg: "bg-stone-900",
@@ -17,7 +17,7 @@ const experiences = [
     company: "Google",
     role: "Senior Engineer",
     period: "2022 — 2025",
-    highlight: "Cloud Security & AI Agents",
+    highlight: "Cloud Security. AI Agents. Led internal ML cohorts.",
     isCurrent: false,
     icon: null,
     iconBg: "bg-blue-50",
@@ -29,7 +29,7 @@ const experiences = [
     company: "MathWorks",
     role: "EDG Engineer",
     period: "2019 — 2022",
-    highlight: "Autonomous Systems & Signal Processing",
+    highlight: "Self-driving cars. Speech recognition. Deep Learning book club.",
     isCurrent: false,
     icon: Cpu,
     iconBg: "bg-orange-50",
@@ -39,19 +39,28 @@ const experiences = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-32 md:py-40">
+    <section id="about" className="py-36 md:py-44">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
         {/* Left - Sticky Header */}
         <div className="lg:col-span-4">
           <div className="lg:sticky lg:top-32">
             <span className="text-orange-600 text-[11px] font-semibold uppercase tracking-[0.2em] mb-3 block">
-              Experience
+              The Path
             </span>
-            <h2 className="text-3xl md:text-4xl font-semibold text-stone-900 leading-snug">
-              Where I&apos;ve
+            <h2 className="text-3xl md:text-4xl font-semibold text-stone-900 leading-snug mb-8">
+              From Zero
               <br />
-              worked.
+              to Systems.
             </h2>
+            {/* Origin story quote */}
+            <div className="bg-stone-50 border border-stone-100 rounded-2xl p-6 max-w-sm">
+              <p className="text-stone-600 font-serif italic text-base leading-relaxed">
+                "ALGORITHMS are going to power products and marketing of tomorrow."
+              </p>
+              <p className="text-stone-400 text-xs mt-3 font-mono uppercase tracking-wider">
+                — Early conviction
+              </p>
+            </div>
           </div>
         </div>
 
@@ -109,6 +118,13 @@ export function AboutSection() {
                 </div>
               );
             })}
+          </div>
+
+          {/* Education note */}
+          <div className="mt-16 pt-12 border-t border-stone-200">
+            <p className="text-stone-500 text-sm">
+              <span className="font-medium text-stone-700">Education:</span> MTech in Machine Learning & AI, IIIT Delhi
+            </p>
           </div>
         </div>
       </div>

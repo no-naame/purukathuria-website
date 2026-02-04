@@ -1,9 +1,9 @@
 const skills = [
-  "Machine Learning",
-  "System Design",
-  "Education",
+  "ML & Deep Learning",
   "Distributed Systems",
-  "Building Communities",
+  "AI Agents",
+  "Teaching at Scale",
+  "Zero to One Thinking",
 ];
 
 export function MarqueeBar() {

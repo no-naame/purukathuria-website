@@ -4,7 +4,7 @@
   --bg-paper: #F9F8F6;
   --text-primary: #1C1917;
   --text-secondary: #57534E;
-  --accent-color: #EA580C;
+  --accent-color: #ff5c00;
   --border-color: #E7E5E4;
 }
 
@@ -14,6 +14,19 @@
   --font-sans: var(--font-outfit);
   --font-serif: var(--font-outfit);
   --font-mono: var(--font-outfit);
+
+  /* Custom orange palette using #ff5c00 */
+  --color-orange-50: #fff7ed;
+  --color-orange-100: #ffedd5;
+  --color-orange-200: #ffd9b3;
+  --color-orange-300: #ffb980;
+  --color-orange-400: #ff8c40;
+  --color-orange-500: #ff5c00;
+  --color-orange-600: #ff5c00;
+  --color-orange-700: #cc4a00;
+  --color-orange-800: #993800;
+  --color-orange-900: #662500;
+  --color-orange-950: #331300;
 }
 
 body {
@@ -66,7 +79,7 @@ h1, h2, h3, h4, .serif {
   position: absolute;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(234, 88, 12, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(circle, rgba(255, 92, 0, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
