@@ -1,130 +1,132 @@
-import { Rocket, Cpu } from "lucide-react";
-
 const experiences = [
   {
     id: 1,
-    company: "Lex AI Labs",
     role: "Founder",
-    period: "Present",
-    highlight: "AI education for India. 50+ engineers transformed.",
-    isCurrent: true,
-    icon: Rocket,
-    iconBg: "bg-stone-900",
-    iconColor: "text-white",
+    company: "Lex AI Labs",
+    description:
+      "Currently building the future of AI education. Helping students across India understand and leverage artificial intelligence.",
+    isFirst: true,
   },
   {
     id: 2,
+    role: "Software Engineer",
     company: "Google",
-    role: "Senior Engineer",
-    period: "2022 — 2025",
-    highlight: "Cloud Security. AI Agents. Led internal ML cohorts.",
-    isCurrent: false,
-    icon: null,
-    iconBg: "bg-blue-50",
-    iconColor: "text-blue-600",
-    iconText: "G",
+    description:
+      "Worked on large scale distributed systems. Learned what it takes to build products for billions of users.",
+    isFirst: false,
   },
   {
     id: 3,
+    role: "Engineer",
     company: "MathWorks",
-    role: "EDG Engineer",
-    period: "2019 — 2022",
-    highlight: "Self-driving cars. Speech recognition. Deep Learning book club.",
-    isCurrent: false,
-    icon: Cpu,
-    iconBg: "bg-orange-50",
-    iconColor: "text-orange-500",
+    description:
+      "Developed core algorithms for MATLAB. Deepened understanding of computational mathematics.",
+    isFirst: false,
   },
 ];
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-36 md:py-44">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
-        {/* Left - Sticky Header */}
-        <div className="lg:col-span-4">
-          <div className="lg:sticky lg:top-32">
-            <span className="text-orange-600 text-[11px] font-semibold uppercase tracking-[0.2em] mb-3 block">
+    <section id="about" className="py-32 md:py-44 relative">
+      <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-28 items-center">
+          {/* Left - Content */}
+          <div>
+            {/* Label */}
+            <span className="text-orange-500 font-medium tracking-[0.2em] text-xs uppercase mb-6 block">
               The Path
             </span>
-            <h2 className="text-3xl md:text-4xl font-semibold text-stone-900 leading-snug mb-8">
-              From Zero
-              <br />
-              to Systems.
+
+            {/* Heading */}
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium text-stone-900 mb-12 leading-tight">
+              Bridging the gap between{" "}
+              <span className="italic text-stone-400">Code</span>{" "}
+              <span className="text-stone-300">&</span>{" "}
+              <span className="italic text-stone-400">Classroom</span>
             </h2>
-            {/* Origin story quote */}
-            <div className="bg-stone-50 border border-stone-100 rounded-2xl p-6 max-w-sm">
-              <p className="text-stone-600 font-serif italic text-base leading-relaxed">
-                "ALGORITHMS are going to power products and marketing of tomorrow."
+
+            {/* Timeline */}
+            <div className="space-y-10 border-l-2 border-stone-200 pl-10 relative">
+              {experiences.map((exp) => (
+                <div key={exp.id} className="relative">
+                  {/* Dot */}
+                  <span
+                    className={`absolute -left-[45px] top-1.5 w-5 h-5 rounded-full border-4 border-[#fafafa] ${
+                      exp.isFirst ? "bg-orange-500" : "bg-stone-300"
+                    }`}
+                  />
+                  <h4 className="text-stone-900 text-xl md:text-2xl font-semibold mb-3">
+                    {exp.role} @ {exp.company}
+                  </h4>
+                  <p className="text-stone-500 text-base leading-relaxed max-w-lg">
+                    {exp.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Signature */}
+            <div className="mt-16">
+              <div className="inline-block bg-stone-100 px-8 py-4 rounded-xl">
+                <p className="text-stone-900 font-serif italic text-2xl">Puru K.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right - Polaroid Images */}
+          <div className="relative h-[600px] w-full hidden lg:block">
+            {/* Top left polaroid */}
+            <div className="absolute top-8 left-8 z-10 w-72 p-4 bg-white rotate-[-3deg] shadow-2xl rounded-sm border border-stone-100">
+              <img
+                src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=1000&auto=format&fit=crop"
+                className="w-full h-52 object-cover grayscale contrast-125 mb-4"
+                alt="Teaching"
+              />
+              <p className="text-stone-600 font-serif text-base italic text-center">
+                First workshop in Delhi
               </p>
-              <p className="text-stone-400 text-xs mt-3 font-mono uppercase tracking-wider">
-                — Early conviction
+            </div>
+
+            {/* Bottom right polaroid */}
+            <div className="absolute bottom-12 right-8 z-20 w-64 p-4 bg-white rotate-[4deg] shadow-2xl rounded-sm border border-stone-100">
+              <img
+                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1000&auto=format&fit=crop"
+                className="w-full h-44 object-cover grayscale contrast-125 mb-4"
+                alt="Coding"
+              />
+              <p className="text-stone-600 font-serif text-base italic text-center">
+                Hackathon nights 💻
+              </p>
+            </div>
+
+            {/* Yellow sticky note - centered */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 w-56 bg-yellow-300 p-5 shadow-xl rotate-[-6deg]">
+              <p className="text-stone-900 text-lg leading-snug font-serif">
+                "ALGORITHMS are going to power products and marketing of tomorrow."
               </p>
             </div>
           </div>
-        </div>
 
-        {/* Right - Experience List */}
-        <div className="lg:col-span-8">
-          <div className="space-y-12">
-            {experiences.map((exp) => {
-              const Icon = exp.icon;
-              return (
-                <div
-                  key={exp.id}
-                  className="group"
-                >
-                  {/* Period - Top Right on Mobile, Inline on Desktop */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-5">
-                      {/* Icon */}
-                      <div
-                        className={`w-12 h-12 rounded-xl ${exp.iconBg} flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-105`}
-                      >
-                        {Icon ? (
-                          <Icon className={`w-5 h-5 ${exp.iconColor}`} />
-                        ) : (
-                          <span className={`text-lg font-bold ${exp.iconColor}`}>
-                            {exp.iconText}
-                          </span>
-                        )}
-                      </div>
+          {/* Mobile version */}
+          <div className="lg:hidden mt-8">
+            {/* Yellow sticky note */}
+            <div className="bg-yellow-300 p-5 shadow-lg max-w-sm mx-auto transform rotate-2 mb-8">
+              <p className="text-stone-900 text-lg leading-snug font-serif">
+                "ALGORITHMS are going to power products and marketing of tomorrow."
+              </p>
+            </div>
 
-                      {/* Role & Company */}
-                      <div>
-                        <div className="flex items-center gap-3 flex-wrap">
-                          <h3 className="text-xl md:text-2xl font-semibold text-stone-900">
-                            {exp.role}, {exp.company}
-                          </h3>
-                          {exp.isCurrent && (
-                            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-600 text-[10px] font-semibold uppercase tracking-wide">
-                              <span className="relative flex h-1.5 w-1.5">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
-                              </span>
-                              Now
-                            </span>
-                          )}
-                        </div>
-                        <p className="text-stone-500 mt-1">{exp.highlight}</p>
-                      </div>
-                    </div>
-
-                    {/* Period */}
-                    <span className="hidden md:block text-sm text-stone-400 pt-1 flex-shrink-0">
-                      {exp.period}
-                    </span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Education note */}
-          <div className="mt-16 pt-12 border-t border-stone-200">
-            <p className="text-stone-500 text-sm">
-              <span className="font-medium text-stone-700">Education:</span> MTech in Machine Learning & AI, IIIT Delhi
-            </p>
+            {/* Single polaroid for mobile */}
+            <div className="bg-white p-4 shadow-xl rounded-sm max-w-sm mx-auto transform -rotate-2 border border-stone-100">
+              <img
+                src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=1000&auto=format&fit=crop"
+                className="w-full h-56 object-cover grayscale contrast-125 mb-4"
+                alt="Teaching"
+              />
+              <p className="text-stone-600 font-serif text-base italic text-center">
+                First workshop in Delhi
+              </p>
+            </div>
           </div>
         </div>
       </div>
